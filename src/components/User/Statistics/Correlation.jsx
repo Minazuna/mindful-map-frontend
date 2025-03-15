@@ -31,7 +31,7 @@ const Correlation = () => {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No token found');
 
-        const response = await axios.get('http://localhost:5000/api/weekly-correlation', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/weekly-correlation`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -66,7 +66,7 @@ const Correlation = () => {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No token found');
 
-        await axios.post('http://localhost:5000/api/recommendations', 
+        await axios.post(`${import.meta.env.VITE_NODE_API}/api/recommendations`, 
           { correlationData }, 
           { headers: { Authorization: `Bearer ${token}` }}
         );

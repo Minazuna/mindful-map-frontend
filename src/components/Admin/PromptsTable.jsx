@@ -21,7 +21,7 @@ const PromptsTable = () => {
   const fetchPrompts = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:5000/api/admin/prompts", {
+      const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/prompts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPrompts(response.data);
@@ -45,7 +45,7 @@ const PromptsTable = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.delete(`http://localhost:5000/api/admin/${id}`, { // FIXED TEMPLATE LITERAL
+      const response = await axios.delete(`${import.meta.env.VITE_NODE_API}/api/admin/${id}`, { // FIXED TEMPLATE LITERAL
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,7 @@ const PromptsTable = () => {
   const handleAddPrompt = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post("http://localhost:5000/api/admin/add-prompt", { question: newPrompt }, {
+      const response = await axios.post(`${import.meta.env.VITE_NODE_API}/api/admin/add-prompt`, { question: newPrompt }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPrompts([...prompts, response.data]);

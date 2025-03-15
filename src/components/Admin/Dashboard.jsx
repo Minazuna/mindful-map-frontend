@@ -36,7 +36,7 @@ const Dashboard = () => {
     const fetchMonthlyUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/monthly-users', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/monthly-users`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -51,7 +51,7 @@ const Dashboard = () => {
     const fetchActiveUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/active-users', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/active-users`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -65,7 +65,7 @@ const Dashboard = () => {
     const fetchInactiveUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/inactive-users', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/inactive-users`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -79,7 +79,7 @@ const Dashboard = () => {
     const fetchDailyEngagement = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/daily-forum-engagement', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/daily-forum-engagement`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -93,7 +93,7 @@ const Dashboard = () => {
     const fetchWeeklyEngagement = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/weekly-forum-engagement', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/weekly-forum-engagement`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -107,7 +107,7 @@ const Dashboard = () => {
     const fetchDailyMoodLogs = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/daily-mood-logs', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/daily-mood-logs`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -121,7 +121,7 @@ const Dashboard = () => {
     const fetchDailyJournalLogs = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/daily-journal-logs', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/daily-journal-logs`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -135,7 +135,7 @@ const Dashboard = () => {
     const fetchWeeklyCorrelationValues = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/weekly-correlation-values', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/weekly-correlation-values`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -149,7 +149,7 @@ const Dashboard = () => {
     const fetchWeeklyForumPosts = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/weekly-forum-posts', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/weekly-forum-posts`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -163,7 +163,7 @@ const Dashboard = () => {
     const fetchActiveVsInactiveUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/admin/active-vs-inactive-users', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/active-vs-inactive-users`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

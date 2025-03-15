@@ -29,13 +29,13 @@ const InactiveUsers = () => {
         const token = localStorage.getItem("token");
       
         await axios.post(
-          "http://localhost:5000/api/admin/check-expired-grace-periods",
+          `${import.meta.env.VITE_NODE_API}/api/admin/check-expired-grace-periods`,
           {},
           { headers: { Authorization: `Bearer ${token}` } }
         );
         
         // Then fetch the updated user list
-        const response = await axios.get("http://localhost:5000/api/admin/inactive-users", {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/inactive-users`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -72,7 +72,7 @@ const InactiveUsers = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/api/admin/soft-delete", 
+        `${import.meta.env.VITE_NODE_API}/api/admin/soft-delete`, 
         { userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -97,7 +97,7 @@ const InactiveUsers = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/admin/reactivate", 
+        `${import.meta.env.VITE_NODE_API}/api/admin/reactivate`, 
         { userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

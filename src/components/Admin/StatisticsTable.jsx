@@ -20,7 +20,7 @@ const StatisticsTable = () => {
   const fetchStatistics = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:5000/api/admin/correlation-values", {
+      const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/correlation-values`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -46,7 +46,7 @@ const JournalPrompt = () => {
       });
 
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/journal', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_NODE_API}/api/journal`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`,

@@ -31,7 +31,7 @@ const CorrelationStatistics = () => {
         throw new Error('No token found');
       }
 
-      const response = await axios.get('http://localhost:5000/api/weekly-correlation-statistics', {
+      const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/weekly-correlation-statistics`, {
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -126,7 +126,7 @@ const CorrelationStatistics = () => {
       }
     
       const monthlyData = await Promise.all(weeks.map(async ({ startOfWeek, endOfWeek }) => {
-        const response = await axios.get('http://localhost:5000/api/weekly-correlation-statistics', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/weekly-correlation-statistics`, {
           headers: {
             Authorization: `Bearer ${token}`
           },

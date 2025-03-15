@@ -31,7 +31,7 @@ const CalendarLog = () => {
     const fetchMoodLogs = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/mood-log', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/mood-log`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

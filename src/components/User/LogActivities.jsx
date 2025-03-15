@@ -57,7 +57,7 @@ const LogActivities = ({ formData, setFormData }) => {
         return;
       }
   
-      const response = await axios.post(`http://localhost:5000/api/mood-log`, formData, {
+      const response = await axios.post(`${import.meta.env.VITE_NODE_API}/api/mood-log`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

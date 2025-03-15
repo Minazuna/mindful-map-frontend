@@ -72,7 +72,7 @@ const DailyPrediction = () => {
           return;
         }
 
-        const response = await fetch('http://localhost:5000/api/predict-mood', {
+        const response = await fetch(`${import.meta.env.VITE_PYTHON_API}/api/predict-mood`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

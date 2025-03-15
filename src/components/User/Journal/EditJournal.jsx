@@ -21,7 +21,7 @@ const EditJournal = () => {
     const fetchJournalEntry = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:5000/api/journal/${id}`, {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/journal/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -50,7 +50,7 @@ const EditJournal = () => {
       });
 
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/journal/${id}`, formData, {
+      await axios.put(`${import.meta.env.VITE_NODE_API}/api/journal/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`,

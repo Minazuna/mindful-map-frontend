@@ -31,7 +31,7 @@ const Recommendations = () => {
           }
 
           const response = await axios.post(
-            'http://localhost:5000/api/recommendations', 
+            `${import.meta.env.VITE_NODE_API}/api/recommendations`, 
             { correlationData: [...correlationData, ...sleepQualityData] }, 
             { headers: { Authorization: `Bearer ${token}` }}
           );

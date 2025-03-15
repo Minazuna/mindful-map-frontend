@@ -93,7 +93,7 @@ const ForumDiscussion = () => {
         const token = localStorage.getItem("token");
         
         // Get user data
-        const userResponse = await axios.get("http://localhost:5000/api/user", {
+        const userResponse = await axios.get(`${import.meta.env.VITE_NODE_API}/api/user`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -101,7 +101,7 @@ const ForumDiscussion = () => {
         setUser(userResponse.data);
         
         // Get today's prompt
-        const promptResponse = await axios.get("http://localhost:5000/api/todays-prompt", {
+        const promptResponse = await axios.get(`${import.meta.env.VITE_NODE_API}/api/todays-prompt`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -112,7 +112,7 @@ const ForumDiscussion = () => {
           setTodaysPrompt(promptResponse.data);
           
           // Get comments/discussions for this prompt
-          const forumResponse = await axios.get(`http://localhost:5000/api/${promptResponse.data._id}`, {
+          const forumResponse = await axios.get(`${import.meta.env.VITE_NODE_API}/api/${promptResponse.data._id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -131,7 +131,7 @@ const ForumDiscussion = () => {
         }
         
         // Fetch past forums with comments
-        const pastForumsResponse = await axios.get("http://localhost:5000/api/past-forums", {
+        const pastForumsResponse = await axios.get(`${import.meta.env.VITE_NODE_API}/api/past-forums`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -191,7 +191,7 @@ const ForumDiscussion = () => {
       }
       
       // Save the comment to the forum schema
-      const response = await axios.post("http://localhost:5000/api/comment", {
+      const response = await axios.post(`${import.meta.env.VITE_NODE_API}/api/comment`, {
           promptId: todaysPrompt._id,
           content: newComment,
         },
@@ -226,7 +226,7 @@ const ForumDiscussion = () => {
   
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/${todaysPrompt._id}/comment/${selectedComment}`, {
+      await axios.delete(`${import.meta.env.VITE_NODE_API}/api/${todaysPrompt._id}/comment/${selectedComment}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -89,7 +89,7 @@ const ViewJournal = () => {
       try {
         setLoading(true);
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:5000/api/journal/${id}`, {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/journal/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

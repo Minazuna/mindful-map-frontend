@@ -145,7 +145,7 @@ const JournalLogs = () => {
       try {
         setIsLoading(true);
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/journals', {
+        const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/journals`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -242,7 +242,7 @@ const JournalLogs = () => {
   const handleConfirmDelete = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/journal/${selectedEntry._id}`, {
+      await axios.delete(`${import.meta.env.VITE_NODE_API}/api/journal/${selectedEntry._id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

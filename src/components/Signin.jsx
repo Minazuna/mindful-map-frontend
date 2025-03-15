@@ -30,14 +30,14 @@ const Signin = () => {
     };
   
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', data);
+      const response = await axios.post(`${import.meta.env.VITE_NODE_API}/api/auth/login`, data);
   
       if (response.data.success) {
         localStorage.setItem('token', response.data.token);
         toast.success("Login successful!");
   
         // Fetch user role
-        const userResponse = await axios.get('http://localhost:5000/api/auth/me', {
+        const userResponse = await axios.get(`${import.meta.env.VITE_NODE_API}/api/auth/me`, {
           headers: {
             Authorization: `Bearer ${response.data.token}`,
           },
@@ -48,7 +48,7 @@ const Signin = () => {
         } else if (userResponse.data.role === 'user') {
           // Check if the user has logged a mood for the day
           try {
-            const moodLogResponse = await axios.get('http://localhost:5000/api/mood-log', {
+            const moodLogResponse = await axios.get(`${import.meta.env.VITE_NODE_API}/api/mood-log`, {
               headers: {
                 Authorization: `Bearer ${response.data.token}`,
               },

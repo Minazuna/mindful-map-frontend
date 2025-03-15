@@ -36,7 +36,7 @@ const UsersTable = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:5000/api/admin/users", {
+      const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -73,7 +73,7 @@ const UsersTable = () => {
   const handleBulkDelete = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:5000/api/admin/bulk-delete", { ids: selectedUsers }, {
+      await axios.post(`${import.meta.env.VITE_NODE_API}/api/admin/bulk-delete`, { ids: selectedUsers }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers((prevUsers) =>

@@ -40,7 +40,7 @@ const MainPredictions = () => {
         return;
       }
   
-      const response = await fetch('http://localhost:5000/api/check-mood-logs', {
+      const response = await fetch(`${import.meta.env.VITE_PYTHON_API}/api/check-mood-logs`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
