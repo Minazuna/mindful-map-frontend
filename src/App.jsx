@@ -50,7 +50,7 @@ const useAuth = () => {
     const fetchUserRole = async () => {
       if (token) {
         try {
-          const userResponse = await axios.get('http://localhost:5000/api/auth/me', {
+          const userResponse = await axios.get(`${import.meta.env.VITE_NODE_API}/api/auth/me`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
