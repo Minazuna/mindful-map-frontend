@@ -99,7 +99,7 @@ const UsersTable = () => {
 
       if (action === "softDelete") {
         const response = await axios.post(
-          "http://localhost:5000/api/admin/soft-delete", 
+          `${import.meta.env.VITE_NODE_API}/api/admin/soft-delete`, 
           { userId },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -126,7 +126,7 @@ const UsersTable = () => {
     setLoadingMoodLogs(prev => ({ ...prev, [userId]: true }));
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(`http://localhost:5000/api/admin/user/${userId}/moodlogs`, {
+      const response = await axios.get(`${import.meta.env.VITE_NODE_API}/api/admin/user/${userId}/moodlogs`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
