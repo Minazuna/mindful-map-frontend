@@ -60,7 +60,7 @@ const Signin = () => {
             if (loggedToday) {
               navigate('/mood-entries');
             } else {
-              navigate('/mood-entries');
+              navigate('/log-entries');
             }
           } catch (error) {
             if (error.response && error.response.data.message === 'No mood logs found') {

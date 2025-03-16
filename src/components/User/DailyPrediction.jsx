@@ -78,7 +78,6 @@ const DailyPrediction = () => {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,  
           },
-          credentials: 'omit'
         });
 
         const data = await response.json();

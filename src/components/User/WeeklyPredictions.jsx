@@ -106,7 +106,7 @@ const WeeklyPredictions = () => {
           return;
         }
 
-        const response = await fetch(`${import.meta.env.VITE_PYTHON_API}/api/predict-mood`, {
+        const response = await fetch(`${import.meta.env.VITE_NODE_API}/api/predict-mood`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
