@@ -610,7 +610,7 @@ const UsersTable = () => {
                           {user.createdAt ? new Date(user.createdAt).toISOString().slice(0, 10) : "No Date Available"}
                         </TableCell>
                         <TableCell>
-                          {user.isDeactivated || user.pendingDeactivation ? (
+                          {user.isDeactivated || user.pendingDeactivation || user.status === 'Active' ? (
                             <IconButton disabled>
                               <DeleteIcon sx={{ color: "#9E9E9E" }} />
                             </IconButton>
