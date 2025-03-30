@@ -1,3 +1,10 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+    
+    "crons": [
+      {
+        "path": "/api/admin/check-expired-grace-periods",
+        "schedule": "0 * * * *"
+      }
+    ]
 }
